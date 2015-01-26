@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BB44A3DC-A016-45D7-90C1-6793214325D7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NerveFramework</RootNamespace>
+    <AssemblyName>NerveFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>..\packages\FluentValidation.5.5.0.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector">
+      <HintPath>..\packages\SimpleInjector.2.7.0\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Diagnostics">
+      <HintPath>..\packages\SimpleInjector.2.7.0\lib\net45\SimpleInjector.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Extensions.LifetimeScoping">
+      <HintPath>..\packages\SimpleInjector.Extensions.LifetimeScoping.2.7.0\lib\net40-client\SimpleInjector.Extensions.LifetimeScoping.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Entities\Entity.cs" />
+    <Compile Include="Core\Entities\EntitySet.cs" />
+    <Compile Include="Core\Entities\EntityWithId.cs" />
+    <Compile Include="Core\Entities\IReadEntities.cs" />
+    <Compile Include="Core\Entities\IUnitOfWork.cs" />
+    <Compile Include="Core\Entities\IWriteEntities.cs" />
+    <Compile Include="Core\Events\IEvent.cs" />
+    <Compile Include="Core\Events\IHandleEvent.cs" />
+    <Compile Include="Core\Events\IProcessEvents.cs" />
+    <Compile Include="Core\Events\ITriggerEvent.cs" />
+    <Compile Include="Core\Extensions\EntityExtensions.cs" />
+    <Compile Include="Core\Extensions\ExpressionExtensions.cs" />
+    <Compile Include="Core\Extensions\QueryableExtensions.cs" />
+    <Compile Include="Core\Extensions\ReflectionExtensions.cs" />
+    <Compile Include="Core\Extensions\ReflectionUtilities.cs" />
+    <Compile Include="Core\Transactions\BaseCreateEntityCommand.cs" />
+    <Compile Include="Core\Transactions\BaseEntitiesQuery.cs" />
+    <Compile Include="Core\Transactions\BaseEntityCommand.cs" />
+    <Compile Include="Core\Transactions\BaseEntityQuery.cs" />
+    <Compile Include="Core\Transactions\BaseEnumerableQuery.cs" />
+    <Compile Include="Core\Transactions\ICommand.cs" />
+    <Compile Include="Core\Transactions\IHandleCommand.cs" />
+    <Compile Include="Core\Transactions\IHandleQuery.cs" />
+    <Compile Include="Core\Transactions\IProcessCommands.cs" />
+    <Compile Include="Core\Transactions\IProcessQueries.cs" />
+    <Compile Include="Core\Transactions\IQuery.cs" />
+    <Compile Include="Core\Transactions\ISecuredCommand.cs" />
+    <Compile Include="Core\Transactions\OrderByDirection.cs" />
+    <Compile Include="Core\Validation\IProcessValidation.cs" />
+    <Compile Include="Infrastructure\CompositionRoot\CompositionRootSettings.cs" />
+    <Compile Include="Infrastructure\CompositionRoot\INervePackage.cs" />
+    <Compile Include="Infrastructure\EntityFramework\CompositionRoot.cs" />
+    <Compile Include="Infrastructure\EntityFramework\Customization\ICustomizeDb.cs" />
+    <Compile Include="Infrastructure\EntityFramework\Customization\VanillaDbCustomizer.cs" />
+    <Compile Include="Infrastructure\EntityFramework\EntityWriter.cs" />
+    <Compile Include="Infrastructure\EntityFramework\Initialization\BrownfieldDbInitializer.cs" />
+    <Compile Include="Infrastructure\EntityFramework\Initialization\GreenfieldDbInitializer.cs" />
+    <Compile Include="Infrastructure\EntityFramework\Initialization\MigrationDbInitializer.cs" />
+    <Compile Include="Infrastructure\EntityFramework\Migrations\Configuration.cs" />
+    <Compile Include="Infrastructure\EntityFramework\ModelCreation\DefaultDbModelCreator.cs" />
+    <Compile Include="Infrastructure\EntityFramework\ModelCreation\ICreateDbModel.cs" />
+    <Compile Include="Infrastructure\Events\EventPackage.cs" />
+    <Compile Include="Infrastructure\Events\EventProcessor.cs" />
+    <Compile Include="Infrastructure\Events\MultipleDispatchEventTrigger.cs" />
+    <Compile Include="Infrastructure\Events\TriggerEventWhenHandlersExistDecorator.cs" />
+    <Compile Include="Infrastructure\FluentValidation\ValidateCommandDecorator.cs" />
+    <Compile Include="Infrastructure\FluentValidation\ValidateNothingDecorator.cs" />
+    <Compile Include="Infrastructure\FluentValidation\ValidateQueryDecorator.cs" />
+    <Compile Include="Infrastructure\FluentValidation\ValidationPackage.cs" />
+    <Compile Include="Infrastructure\FluentValidation\ValidationProcessor.cs" />
+    <Compile Include="Infrastructure\FluentValidation\ValidatorFactory.cs" />
+    <Compile Include="Infrastructure\Transactions\CommandedEventProcessingDecorator.cs" />
+    <Compile Include="Infrastructure\Transactions\CommandLifetimeScopeDecorator.cs" />
+    <Compile Include="Infrastructure\Transactions\CommandNotNullDecorator.cs" />
+    <Compile Include="Infrastructure\Transactions\CommandPackage.cs" />
+    <Compile Include="Infrastructure\Transactions\CommandProcessor.cs" />
+    <Compile Include="Infrastructure\Transactions\QueryLifetimeScopeDecorator.cs" />
+    <Compile Include="Infrastructure\Transactions\QueryNotNullDecorator.cs" />
+    <Compile Include="Infrastructure\Transactions\QueryPackage.cs" />
+    <Compile Include="Infrastructure\Transactions\QueryProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
