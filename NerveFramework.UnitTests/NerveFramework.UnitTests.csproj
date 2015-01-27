@@ -52,6 +52,10 @@
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.2.1409.1722\lib\net40\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="NerveFramework, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NerveFramework.1.1.0.0\lib\net451\NerveFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -129,10 +133,6 @@
     <ProjectReference Include="..\NerveFramework.Web\NerveFramework.Web.csproj">
       <Project>{04A37572-07C1-4424-BFCC-C88AAA37A81D}</Project>
       <Name>NerveFramework.Web</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NerveFramework\NerveFramework.csproj">
-      <Project>{BB44A3DC-A016-45D7-90C1-6793214325D7}</Project>
-      <Name>NerveFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
