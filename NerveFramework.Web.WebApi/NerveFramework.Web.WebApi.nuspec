@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/janhartmann/nerve-framework</licenseUrl>
+    <projectUrl>https://github.com/janhartmann/nerve-framework</projectUrl>
+    <iconUrl>http://nerve.janhartmann.dk/images/nuget-icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright 2014-2015</copyright>
+    <tags>nerve framework cqrs inversion-of-control entity nerve-framework asp-net-webapi webapi</tags>
+  </metadata>
+</package>

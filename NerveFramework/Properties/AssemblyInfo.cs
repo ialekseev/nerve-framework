@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NerveFramework")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Nerve Framework provides a platform for structuring .NET applications using CQRS, Entity Framework and Inversion of Control (IoC)")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Jan Hartmann")]
 [assembly: AssemblyProduct("NerveFramework")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]

@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NerveFramework.Web.Mvc")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Integration library for ASP.NET MVC5 for the Nerve Framework")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Jan Hartmann")]
 [assembly: AssemblyProduct("NerveFramework.Web.Mvc")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
