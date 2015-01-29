@@ -20,7 +20,7 @@
     <TestProjectType>UnitTest</TestProjectType>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <NuGetPackageImportStamp>a6f7a477</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>b47faec1</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,49 +40,46 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="FluentValidation">
+    <Reference Include="FluentValidation, Version=5.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\FluentValidation.5.5.0.0\lib\Net40\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="FluentValidation.WebApi, Version=5.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\FluentValidation.WebApi.5.5.0.0\lib\Net45\FluentValidation.WebApi.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\FluentValidation.WebAPI.5.5.0.0\lib\Net45\FluentValidation.WebApi.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Moq">
+    <Reference Include="Moq, Version=4.2.1409.1722, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Moq.4.2.1409.1722\lib\net40\Moq.dll</HintPath>
-    </Reference>
-    <Reference Include="NerveFramework, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NerveFramework.1.1.0.0\lib\net451\NerveFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="NerveFramework.Web, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NerveFramework.Web.1.1.0.0\lib\net451\NerveFramework.Web.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleInjector">
+    <Reference Include="SimpleInjector, Version=2.7.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\SimpleInjector.2.7.0\lib\net45\SimpleInjector.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleInjector.Diagnostics">
+    <Reference Include="SimpleInjector.Diagnostics, Version=2.7.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\SimpleInjector.2.7.0\lib\net45\SimpleInjector.Diagnostics.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleInjector.Extensions.LifetimeScoping">
+    <Reference Include="SimpleInjector.Extensions.LifetimeScoping, Version=2.7.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\SimpleInjector.Extensions.LifetimeScoping.2.7.0\lib\net40-client\SimpleInjector.Extensions.LifetimeScoping.dll</HintPath>
     </Reference>
     <Reference Include="SimpleInjector.Integration.Web, Version=2.7.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\SimpleInjector.Integration.Web.2.7.0\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -95,13 +92,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
-    <Reference Include="xunit.abstractions">
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\xunit.abstractions.2.0.0-rc1-build2826\lib\net35\xunit.abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="xunit.assert">
+    <Reference Include="xunit.assert, Version=2.0.0.2826, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\xunit.assert.2.0.0-rc1-build2826\lib\portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.assert.dll</HintPath>
     </Reference>
-    <Reference Include="xunit.core">
+    <Reference Include="xunit.core, Version=2.0.0.2826, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\xunit.extensibility.core.2.0.0-rc1-build2826\lib\portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.core.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -139,6 +139,20 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NerveFramework.Web.WebApi\NerveFramework.Web.WebApi.csproj">
+      <Project>{f4af1186-4fc6-432c-8c0b-68841a9d3247}</Project>
+      <Name>NerveFramework.Web.WebApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NerveFramework.Web\NerveFramework.Web.csproj">
+      <Project>{04a37572-07c1-4424-bfcc-c88aaa37a81d}</Project>
+      <Name>NerveFramework.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NerveFramework\NerveFramework.csproj">
+      <Project>{bb44a3dc-a016-45d7-90c1-6793214325d7}</Project>
+      <Name>NerveFramework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
