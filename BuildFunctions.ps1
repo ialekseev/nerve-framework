@@ -18,7 +18,7 @@
     } | Set-Content $filePath
 }
 
-Function ChangeNuGetPackageVersion() {
+Function ChangeNugetSpecDependencyVersion() {
     Param(
         [Parameter(Mandatory=$true)]
         [string]$filePath,
@@ -28,11 +28,14 @@ Function ChangeNuGetPackageVersion() {
         [string]$publishVersion
     )
     [xml] $toFile = (Get-Content $filePath)
-    $node = $toFile.SelectSingleNode("//packages/package[@id='" + $packageId + "']")
-    if ($node) {
-        Write-Host "-- Updating '$packageId' in '$filePath' to version '$publishVersion'"
-        $node.version = $publishVersion
-        $toFile.Save($filePath)
+    $nodes = $toFile.SelectNodes("//package/metadata/dependencies/dependency[starts-with(@id, 'NerveFramework')]")
+    if ($nodes) {
+        foreach ($node in $nodes) {
+            $nodeId = $node.id
+            Write-Host "-- Updating '$nodeId' in '$filePath' to version '$publishVersion'"
+            $node.version = "[" + $publishVersion +"]"
+            $toFile.Save($filePath)
+        }
    }
 }
 

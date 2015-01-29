@@ -2,7 +2,6 @@ Param(
     [Parameter(Mandatory=$true)]
     [string]$version,
     [string]$configuration = "Release",
-    [string]$targetFrameworkVersion = "v4.5",
     [boolean]$tests = $false,
     [boolean]$publish = $false,
     [boolean]$nugetPack = $false
@@ -26,14 +25,14 @@ foreach ($assemblyInfo in $assemblyInfoFiles) {
 
 # Build the entire solution
 Write-Host "Cleaning and building $solution (Configuration: $configuration)"
-msbuild.exe $solution /nologo /v:q /p:Configuration=$configuration
-msbuild.exe $solution /nologo /v:q /p:Configuration=$configuration /clp:ErrorsOnly
+msbuild.exe $solution /nologo /v:m /p:Configuration=$configuration /t:Clean
+msbuild.exe $solution /nologo /v:m /p:Configuration=$configuration /clp:ErrorsOnly
 
 # Increase the dependency on NerveFramework on all depending assemblies
-Write-Host "Changing the NerveFramework NuGet packages.config version dependencies to '$version'"
-$dependentAssemblies = Get-ChildItem -Filter "packages.config" -Recurse | Resolve-Path -Relative
-foreach ($dependentAssembly in $dependentAssemblies) {
-    ChangeNuGetPackageVersion $dependentAssembly "NerveFramework" $version
+Write-Host "Changing the NerveFramework NuGet Spec version dependencies to '$version'"
+$nuspecFiles = Get-ChildItem -Filter "NerveFramework*.nuspec" -Recurse | Resolve-Path -Relative
+foreach ($nuspec in $nuspecFiles) {
+    ChangeNugetSpecDependencyVersion $nuspec "NerveFramework" $version
 } 
 
 # NuGet Pack the assemblies
@@ -45,4 +44,4 @@ if ($nugetPack) {
     } 
 }
 
-# TODO: Publish NuGet
+# TODO: Publish NuG
