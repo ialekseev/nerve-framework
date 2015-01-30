@@ -4,7 +4,7 @@ Param(
     [string]$configuration = "Release",
     [boolean]$tests = $false,
     [boolean]$publish = $false,
-    [boolean]$nugetPack = $false
+    [boolean]$nugetPack = $true
 )
 
 # Include functions
@@ -40,7 +40,7 @@ if ($nugetPack) {
     Write-Host "Packaging NuGet Specs"
     $nugetSpecs = Get-ChildItem -Filter "NerveFramework*.nuspec" -Recurse | Resolve-Path -Relative
     foreach ($nugetSpec in $nugetSpecs) {
-        PackNuSpec $nugetSpec $configuration
+        PackNuSpec $nugetSpec $configuration $version
     } 
 }
 

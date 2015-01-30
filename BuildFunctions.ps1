@@ -44,8 +44,10 @@ Function PackNuSpec() {
         [Parameter(Mandatory=$true)]
         [string]$nugetSpec,
         [Parameter(Mandatory=$true)]
-        [string]$configuration
+        [string]$configuration,
+	[Parameter(Mandatory=$true)]
+        [string]$publishVersion	
     )
     Write-Host "-- Packaging '$nugetSpec'"
-    Invoke-Expression ".nuget\NuGet.exe pack $nugetSpec -prop Configuration=$configuration"
+    Invoke-Expression ".nuget\NuGet.exe pack $nugetSpec -properties version=$publishVersion" 
 }
